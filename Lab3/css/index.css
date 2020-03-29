@@ -1,0 +1,104 @@
+body{
+    font-family: fantasy,Arial, Helvetica, sans-serif;
+    color: black;
+    background-color: #f6f6f6;
+    margin:0;
+    font-size:16px;
+    line-height: 1.2em;
+}
+header{
+    font-size: 20px;
+    font-weight: bold;
+    height: 90px;
+    text-align: center;
+    color: black;
+    background-color: white;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+    padding:0 10%;
+}
+nav{
+    float:left;
+}
+nav a{
+    color: grey;
+    padding: 10px;
+    text-decoration:none;
+}
+nav a img{
+    margin-top: 16px;
+}
+nav a:first-child{
+    color: black;
+}
+a:hover{
+    color: #87bff2;
+}
+.div-left{
+    float:right;
+    margin-top: 30px;
+}
+.div-right{
+    float:right;
+    margin-top: 30px;
+    padding-right: 20px;
+}
+.contents{
+    background-color: white;
+    margin:20px 10%;
+    padding-bottom: 20px;
+}
+.title{
+    padding: 1.5em;
+    font-size: 20px;
+    font-weight: bold;
+    border:solid 1px#f6f6f6;
+}
+aside{
+    float: right;
+    margin: 10px 5%;
+}
+aside a{
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+aside li{
+    display: block;
+    padding-bottom: 1em;
+}
+.comments{
+    line-height: 1.5em;
+    padding-left: 3%;
+    padding-right: 15%;
+    padding-top: 10px;
+}
+ul li h3{
+    padding:10px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+ul li p{
+    padding-bottom: 10px;
+}
+hr{
+    margin-top: 20px;
+    border-width:0;
+    color: #f6f6f6;
+    height: 2px;
+    background-color: #f6f6f6;
+}
+blockquote{
+    border-radius: 5px;
+    text-align: center;
+    color: #0084ff;
+    margin:0;
+    width: 80px;
+    background-color: #ddecfa;
+    padding:0.2em;
+}
+input{
+    outline: none;
+}
+h3,p,.div-right,blockquote{
+    cursor:default;
+}

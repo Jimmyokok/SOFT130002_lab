@@ -1,0 +1,88 @@
+body{
+    text-align: center;
+    font-family: fantasy,Arial, Helvetica, sans-serif;
+    color: black;
+    background-color: #f6f6f6;
+    margin:0;
+    font-size:16px;
+    line-height: 1.2em;
+}
+header{
+    font-size: 20px;
+    font-weight: bold;
+    height: 90px;
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+nav a{
+    float:right;
+    padding-right: 10%;
+    margin-top: 30px;
+    text-decoration:none;
+    color: grey;
+}
+a:hover{
+    color: #87bff2;
+}
+.form{
+    margin: 20px 10%;
+    background-color: white;
+}
+h1{
+    padding: 1.5em;
+    font-size: 20px;
+    font-weight: bold;
+    border-style: solid;
+    border-width: 1px;
+    border-color:#f6f6f6;
+}
+.form p{
+    margin-left: 10%;
+    margin-right: 10%;
+    padding:10px;
+}
+input{
+    width:25%;
+    margin-top: 10px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color:black;
+    padding:5px;
+}
+input[type="checkbox"],input[type="radio"]{
+    margin-left:20px;
+    width:2em;
+}
+input[type="button"]{
+    padding-top: 2px;
+    height:28px;
+}
+input[type="button"],input[type="submit"]  {
+    background-color: white;
+    border-width:1px;
+    width: 8em;
+}
+input[type="button"],input[type="submit"],input[type="checkbox"], input[type="radio"], select:hover {
+    cursor: pointer;
+}
+select{
+    margin-top: 10px;
+    padding:5px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color:black;
+}
+textarea {
+    width:80%;
+    padding:20px;
+    font-family: fantasy,Arial, Helvetica, sans-serif;
+    color: black;
+    background-color: #f6f6f6;
+    height: 20em;
+}
+input{
+    outline: none;
+}
