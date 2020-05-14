@@ -4,29 +4,52 @@
 
 ## 1. 实现方式
 
-- 遍历works数组，把对应的div item通过document.write直接写入html即可
+- 遍历works数组，创建对应的item节点
   ```js
-  function output(){
-    for(var i=0;i<4;i++){
-      var line=works[i];
-      var str=` <div class='item'>
-                  <h4>Genre : `+line.tips+`</h4>
-                  <div class='inner-box'>
-                    <h3 style='display:inline'>`+line.author+`</h3>
-                    <h5 style='display:inline; margin-left:1em'>lifetime:`+line.lifetime+`</h5>
-                  </div>
-                  <div class='inner-box'>
-                    <h3>Popular Photos</h3>`;
-      for(var phstr in line.photos){
-        str+=    `<img class='photo' src='./img/`+line.photos[phstr]+`'>`;
-      }
-      str+=      `</div>
-                  <button>Visit</button>
-                </div>`;
-      document.write(str);
-    }
+  var element=document.getElementsByClassName("flex-container justify");
+  var item=document.createElement("div");
+  item.className = "item";
+  element[0].appendChild(item);
+  ```
+- 创建该item下应该有的全部html元素
+  ```js
+  var h4=document.createElement("h4");
+  var inner_box1=document.createElement("div");
+  var inner_box2=document.createElement("div");
+  var h31=document.createElement("h3");
+  var h32=document.createElement("h3");
+  var h5=document.createElement("h5");
+  var button=document.createElement("button");
+  ```
+- 设置它们的各项属性
+  ```js
+  h4.innerHTML = "Genre : " + line.tips;
+  inner_box1.className = inner_box2.className = "inner-box";
+  h31.style = "display:inline";
+  h31.innerHTML = line.author;
+  h32.innerHTML = "Popular Photos";
+  h5.style = "display:inline; margin-left:1em";
+  h5.innerHTML = "lifetime:"+line.lifetime;
+  button.innerHTML = "Visit";
+  ```
+- 将他们连接到item
+  ```js
+  item.appendChild(h4);
+  item.appendChild(inner_box1);
+  item.appendChild(inner_box2);
+  item.appendChild(button);
+  inner_box1.appendChild(h31);
+  inner_box1.appendChild(h5);
+  inner_box2.appendChild(h32);
+  ```
+- 最后遍历所有的照片，创建相应img元素然后追加到它的父元素inner_box2
+  ```js
+  for(var phstr in line.photos){
+    var img = document.createElement("img");
+    img.src = "./img/"+line.photos[phstr];
+    img.className = "photo";
+    inner_box2.appendChild(img);
   }
-  output();
   ```
 
 ## 2. 参考资料

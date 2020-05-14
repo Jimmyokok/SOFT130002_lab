@@ -7,21 +7,42 @@ const works = [
 function output(){
     for(var i=0;i<4;i++){
         var line=works[i];
-        var str=`<div class='item'>
-                    <h4>Genre : `+line.tips+`</h4>
-                    <div class='inner-box'>
-                        <h3 style='display:inline'>`+line.author+`</h3>
-                        <h5 style='display:inline; margin-left:1em'>lifetime:`+line.lifetime+`</h5>
-                    </div>
-                    <div class='inner-box'>
-                        <h3>Popular Photos</h3>`;
+
+        var element=document.getElementsByClassName("flex-container justify");
+        var item=document.createElement("div");
+        var h4=document.createElement("h4");
+        var inner_box1=document.createElement("div");
+        var inner_box2=document.createElement("div");
+        var h31=document.createElement("h3");
+        var h32=document.createElement("h3");
+        var h5=document.createElement("h5");
+        var button=document.createElement("button");
+
+        item.className = "item";
+        h4.innerHTML = "Genre : " + line.tips;
+        inner_box1.className = inner_box2.className = "inner-box";
+        h31.style = "display:inline";
+        h31.innerHTML = line.author;
+        h32.innerHTML = "Popular Photos";
+        h5.style = "display:inline; margin-left:1em";
+        h5.innerHTML = "lifetime:"+line.lifetime;
+        button.innerHTML = "Visit";
+
+        element[0].appendChild(item);
+        item.appendChild(h4);
+        item.appendChild(inner_box1);
+        item.appendChild(inner_box2);
+        item.appendChild(button);
+        inner_box1.appendChild(h31);
+        inner_box1.appendChild(h5);
+        inner_box2.appendChild(h32);
+
         for(var phstr in line.photos){
-            str+=`      <img class='photo' src='./img/`+line.photos[phstr]+`'>`;
+            var img = document.createElement("img");
+            img.src = "./img/"+line.photos[phstr];
+            img.className = "photo";
+            inner_box2.appendChild(img);
         }
-        str+=`      </div>
-                    <button>Visit</button>
-                </div>`;
-                document.write(str);
     }
 }
 output();
